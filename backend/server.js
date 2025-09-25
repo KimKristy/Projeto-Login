@@ -2,10 +2,8 @@ const express = require("express");
 const fs = require("fs"); //file system
 const path = require("path");
 const bcrypt = require("bcrypt");
-const jwt = require("josnwebtoken");
+const jwt = require("jsonwebtoken");
 const cors = require("cors");
-const { userInfo } = require("os");
-const { setMaxIdleHTTPParsers } = require("http");
 
 const app = express();
 const port = 5001;
