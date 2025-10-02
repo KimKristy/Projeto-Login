@@ -15,7 +15,7 @@ const handleRegister = async (e)=>{
   try{
     const response = await axios.post("http://localhost:5001/register", {email, senha})
     setMessage(response.data.message)
-    setTimeout(()=>navigate("/login"),2000)
+    setTimeout(()=>navigate("/"),2000)
   }
   catch(erro){
     setMessage(erro.response.data.message || "Erro ao registrar usuário")
@@ -53,7 +53,7 @@ const handleRegister = async (e)=>{
 
         {message && { message }}
         <p>
-          Já tem uma conta? <a href="/register">Faça Login</a>
+          Já tem uma conta? <a href="/">Faça Login</a>
         </p>
       </div>
     </div>
