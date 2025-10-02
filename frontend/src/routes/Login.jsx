@@ -32,12 +32,12 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <div>
-        <h2>Login</h2>
-        <form onSubmit={handleLogin}>
-          <div>
-            <label>Email</label>
+    <div className="flex items-center justify-center min-h-screen bg-yellow-100">
+      <div className="bg-amber-950 m-5 p-2.5 justify-center text-center border-2">
+        <h2 className="font-bold text-amber-800 text-5xl pb-4">Login</h2>
+        <form onSubmit={handleLogin} className="">
+          <div className="border-2 m-2">
+            <label className="font-bold">Email: </label>
             <input
               type="text"
               placeholder="digite seu email"
@@ -47,8 +47,8 @@ const Login = () => {
             />
           </div>
 
-          <div>
-            <label>Senha</label>
+          <div className="border-2 m-2">
+            <label className="font-bold">Senha: </label>
             <input
               type="password"
               placeholder="digite sua senha"
@@ -58,11 +58,16 @@ const Login = () => {
             />
           </div>
 
-          <button>Entrar</button>
+          <button className="border-2 m-1 p-1 rounded-xl border-amber-900 font-bold hover:bg-amber-500">
+            Entrar
+          </button>
         </form>
         {mensagem && <p>{mensagem}</p>}
         <p>
-          Não tem conta ? <a href="/register">Criar Conta</a>
+          Não tem conta ?{" "}
+          <a href="/register" className="hover:text-amber-500">
+            Criar Conta
+          </a>
         </p>
       </div>
     </div>
