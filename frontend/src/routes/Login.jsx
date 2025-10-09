@@ -32,40 +32,61 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-yellow-100">
-      <div className="bg-amber-950 m-5 p-2.5 justify-center text-center border-2">
-        <h2 className="font-bold text-amber-800 text-5xl pb-4">Login</h2>
-        <form onSubmit={handleLogin} className="">
-          <div className="border-2 m-2">
-            <label className="font-bold">Email: </label>
+    <div className="flex flex-grow items-center justify-center bg-gradient-to-r from-yellow-200 to-amber-300 py-10">
+      <div className="bg-white shadow-lg rounded-3xl px-10 py-8 w-full max-w-md">
+        <h2 className="text-4xl font-extrabold text-center text-amber-800 mb-6">
+          Login
+        </h2>
+
+        <form onSubmit={handleLogin} className="space-y-6">
+          <div>
+            <label className="block text-left font-semibold text-amber-700 mb-1">
+              Email:{" "}
+            </label>
             <input
               type="text"
               placeholder="digite seu email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+              className="w-full p-3 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600"
             />
           </div>
 
-          <div className="border-2 m-2">
-            <label className="font-bold">Senha: </label>
+          <div>
+            <label className="block text-left font-semibold text-amber-700 mb-1">
+              Senha:{" "}
+            </label>
             <input
               type="password"
               placeholder="digite sua senha"
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
               required
+              className="w-full p-3 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600"
             />
           </div>
 
-          <button className="border-2 m-1 p-1 rounded-xl border-amber-900 font-bold hover:bg-amber-500">
+          <button
+            type="submit"
+            className="w-full bg-amber-700 text-white font-bold py-3 rounded-lg hover:bg-amber-800 transition duration-200 shadow-md"
+          >
             Entrar
           </button>
         </form>
-        {mensagem && <p>{mensagem}</p>}
-        <p>
-          Não tem conta ?{" "}
-          <a href="/register" className="hover:text-amber-500">
+
+        {mensagem && (
+          <p className="text-center mt-4 font-medium text-amber-900">
+            {mensagem}
+          </p>
+        )}
+
+        <p className="text-center mt-6 text-sm">
+          Não tem conta?{" "}
+          <a
+            href="/register"
+            className="text-amber-700 hover:text-amber-500 font-semibold"
+          >
             Criar Conta
           </a>
         </p>
